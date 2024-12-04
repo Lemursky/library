@@ -1,0 +1,19 @@
+spring:
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/library
+    username: user
+    password: 123
+
+server:
+  port: 8090
+
+logging:
+  level:
+    root: INFO

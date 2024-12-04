@@ -1,0 +1,23 @@
+version: '4.35.1'
+services:
+
+  library-db:
+    image: postgres:16.3-alpine3.20
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    volumes:
+      - library-db-data:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4G
+
+volumes:
+  library-db-data:
+  pgadmin-data:
